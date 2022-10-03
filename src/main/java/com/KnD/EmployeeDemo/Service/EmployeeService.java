@@ -17,11 +17,14 @@ public class EmployeeService {
 	
 	@Transactional
 	public void insertEmployee(Employee emp) {
-		repo.save(emp);
+		repo.save(emp);		
 	}
 	
-	public String displayEmployee() {
-		return "Data";
+	public Employee displayEmployee(Employee emp, int id) {
+//		return "Id is: "+id;
+		Employee employee = repo.findById(id).get();
+		return repo.save(employee);
+//		return id;
 	}
 	
 	public void updateEmployee() {

@@ -35,21 +35,38 @@ public class EmployeeController {
 	
 	
 //	WEB
-//	@PostMapping("/register")
-//	@ResponseBody
-//	public void submitForm(@ModelAttribute("emp") Employee emp) {
-//		System.out.println("POST /register");
-//		System.out.println(emp.toString());
-//		service.insertEmployee(emp);
-//	}
+	@PostMapping("/register")
+	@ResponseBody
+	public void submitForm(@ModelAttribute("emp") Employee emp) {
+		System.out.println("POST /register");
+		System.out.println(emp.toString());
+		service.insertEmployee(emp);
+	}
 	
 	
 //	POSTMAN
-	@PostMapping("/register")
+//	@PostMapping("/register")
+//	@ResponseBody
+//	public String submitForm(@RequestBody Employee emp) {
+//		System.out.println("POST /register");
+//		System.out.println(emp.toString());
+//		return emp.toString();
+//	}
+	
+	@GetMapping("/display")
+	public String display(Model model) {
+//		Employee disp_emp = new Employee();
+		String id = "";
+		model.addAttribute("id",id);
+		System.out.println("GET /display");
+		return "display.jsp";
+	}
+	
+	@PostMapping("/display")
 	@ResponseBody
-	public String submitForm(@RequestBody Employee emp) {
-		System.out.println("POST /register");
-		System.out.println(emp.toString());
-		return emp.toString();
+	public String displayEmployee(@ModelAttribute("emp") Employee emp,@ModelAttribute("id") int id) {
+		System.out.println("POST /display");
+		System.out.println("Id is: "+id);
+		return service.displayEmployee(emp,id).toString();
 	}
 }

@@ -10,6 +10,7 @@
 </head>
 <body>
     <h1>Employee Details</h1>
-    <a href="/register">click here</a>
+    <a href="/register">Register here</a>
+    <a href="/display">Display here</a>
 </body>
 </html>

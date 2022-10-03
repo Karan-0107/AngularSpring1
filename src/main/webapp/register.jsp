@@ -11,7 +11,7 @@
 <body>
     <h1>Employee Details</h1>
     <form:form action="register" method="post" modelAttribute="emp">
-    	<label for="id">Id: <input type="text" name="id"></label> <br>
+    	<!-- <label for="id">Id: <input type="text" name="id"></label> <br> -->
         <label for="name">Name: <input type="text" name="name"></label> <br>
         <label for="mobile_no">Mobile No.: <input type="text" name="mobile_no"></label> <br>
         <label for="department">Department: <input type="text" name="department"></label> <br>

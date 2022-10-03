@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -11,47 +12,45 @@ import javax.persistence.Table;
 @Table(name = "Employee")
 public class Employee {
 	
-//	private Convert convert;
-	
 	@Id
-//	@GeneratedValue
-	private String id;
-	private String name;
-	private String mobile_no;
-	private String department;
-	private String designation;
+	@GeneratedValue(strategy= GenerationType.TABLE)
+	private int id;
+	private String _name;
+	private String _mobileNumber;
+	private String _department;
+	private String _designation;
 	private ArrayList <String> skills;
 	private String skill;
 	
-	public String getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getName() {
-		return name;
+		return _name;
 	}
 	public void setName(String name) {
-		this.name = name;
+		this._name = name;
 	}
 	public String getMobile_no() {
-		return mobile_no;
+		return _mobileNumber;
 	}
 	public void setMobile_no(String mobile_no) {
-		this.mobile_no = mobile_no;
+		this._mobileNumber = mobile_no;
 	}
 	public String getDepartment() {
-		return department;
+		return _department;
 	}
 	public void setDepartment(String department) {
-		this.department = department;
+		this._department = department;
 	}
 	public String getDesignation() {
-		return designation;
+		return _designation;
 	}
 	public void setDesignation(String designation) {
-		this.designation = designation;
+		this._designation = designation;
 	}
 	public ArrayList<String> getSkills() {
 		return skills;
@@ -63,7 +62,7 @@ public class Employee {
 	
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", name=" + name + ", mobile_no=" + mobile_no + ", department=" + department
-				+ ", designation=" + designation + ", skill=" + skill + "]";
+		return "Employee [id=" + id + ", name=" + _name + ", mobile_no=" + _mobileNumber + ", department=" + _department
+				+ ", designation=" + _designation + ", skill=" + skill + "]";
 	}
 }
