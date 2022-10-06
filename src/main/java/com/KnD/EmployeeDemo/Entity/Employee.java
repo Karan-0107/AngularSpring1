@@ -1,6 +1,7 @@
 package com.KnD.EmployeeDemo.Entity;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -60,6 +61,12 @@ public class Employee {
 		this.skill = String.join(",",skills);
 	}
 	
+	public String getSkill() {
+		return skill;
+	}
+	public void setSkill(String skill) {
+		this.skill = skill;
+	}
 	@Override
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + _name + ", mobile_no=" + _mobileNumber + ", department=" + _department

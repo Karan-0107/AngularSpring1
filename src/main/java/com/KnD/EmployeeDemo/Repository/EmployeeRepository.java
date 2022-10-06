@@ -6,6 +6,6 @@ import com.KnD.EmployeeDemo.Entity.Employee;
 
 public interface EmployeeRepository extends CrudRepository<Employee, Integer>{
 	
-//	Iterable<Employee> findAll(Employee emp);
+
 	
 }

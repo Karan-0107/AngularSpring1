@@ -9,10 +9,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Employee Details</h1>
-    <form:form action="register" method="post" modelAttribute="emp">
-    	<!-- <label for="id">Id: <input type="text" name="id"></label> <br> -->
-        <label for="_name">Name: <input type="text" name="name"></label> <br>
+    <h1>Update Employee Details</h1>
+    <form:form action="update" method="post" modelAttribute="emp">
+    	<label for="id">Id: <input type="text" name="id" placeholder="Enter Id whose details is to be changed"></label> <br>
+        <label for="name">Name: <input type="text" name="name"></label> <br>
         <label for="mobile_no">Mobile No.: <input type="text" name="mobile_no"></label> <br>
         <label for="department">Department: <input type="text" name="department"></label> <br>
         <label for="designation">Designation: <input type="text" name="designation"></label> <br>
