@@ -36,24 +36,24 @@ public class EmployeeController {
 	}
 	
 	
-////	WEB
-//	@PostMapping("/register")
-//	@ResponseBody
-//	public void submitForm(@ModelAttribute("emp") Employee emp) {
-//		System.out.println("POST /register");
-//		System.out.println(emp.toString());
-//		service.insertEmployee(emp);
-//	}
-	
-	
-//	POSTMAN
+//	WEB
 	@PostMapping("/register")
 	@ResponseBody
-	public String submitForm(@RequestBody Employee emp) {
+	public void submitForm(@ModelAttribute("emp") Employee emp) {
 		System.out.println("POST /register");
 		System.out.println(emp.toString());
-		return emp.toString();
+		service.insertEmployee(emp);
 	}
+	
+	
+////	POSTMAN
+//	@PostMapping("/register")
+//	@ResponseBody
+//	public String submitForm(@RequestBody Employee emp) {
+//		System.out.println("POST /register");
+//		System.out.println(emp.toString());
+//		return emp.toString();
+//	}
 	
 	@GetMapping("/display")
 	public String display(Model model) {

@@ -12,9 +12,9 @@
     <h1>Update Employee Details</h1>
     <form:form action="update" method="post" modelAttribute="emp">
     	<label for="id">Id: <input type="text" name="id" placeholder="Enter Id whose details is to be changed"></label> <br>
-        <label for="name">Name: <input type="text" name="name"></label> <br>
+        <!-- <label for="name">Name: <input type="text" name="name"></label> <br> -->
         <label for="mobile_no">Mobile No.: <input type="text" name="mobile_no"></label> <br>
-        <label for="department">Department: <input type="text" name="department"></label> <br>
+        <!-- <label for="department">Department: <input type="text" name="department"></label> <br> -->
         <label for="designation">Designation: <input type="text" name="designation"></label> <br>
         <label for="skills">Skills: <input type="text" name="skills"></label> <br>
         <button type="submit" name="Submit">Submit</button>

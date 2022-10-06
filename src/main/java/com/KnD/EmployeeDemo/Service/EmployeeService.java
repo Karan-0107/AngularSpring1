@@ -35,26 +35,26 @@ public class EmployeeService {
 		Employee e = repo.findById(id).get();
 		
 		if(Objects.nonNull(emp.getName()) && !"".equalsIgnoreCase(emp.getName())) {
-			emp.setName(e.getName());
+			e.setName(emp.getName());
 		}
 		
 		if(Objects.nonNull(emp.getMobile_no()) && !"".equalsIgnoreCase(emp.getMobile_no())) {
-			emp.setMobile_no(e.getMobile_no());
+			e.setMobile_no(emp.getMobile_no());
 		}
 		
 		if(Objects.nonNull(emp.getDesignation()) && !"".equalsIgnoreCase(emp.getDesignation())) {
-			emp.setDesignation(e.getDesignation());
+			e.setDesignation(emp.getDesignation());
 		}
 		
 		if(Objects.nonNull(emp.getDepartment()) && !"".equalsIgnoreCase(emp.getDepartment())) {
-			emp.setDepartment(e.getDepartment());
+			e.setDepartment(emp.getDepartment());
 		}
 		
 		if(Objects.nonNull(emp.getSkills()) && !"".equalsIgnoreCase(emp.getSkill())) {
-			emp.setSkills(e.getSkills());
+			e.setSkills(emp.getSkills());
 		}
 		
-		return repo.save(emp);
+		return repo.save(e);
 	}
 	
 	public void deleteEmployee() {
