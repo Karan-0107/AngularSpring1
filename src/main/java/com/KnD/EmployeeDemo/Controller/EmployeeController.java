@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -52,6 +53,7 @@ public class EmployeeController {
 //	public String submitForm(@RequestBody Employee emp) {
 //		System.out.println("POST /register");
 //		System.out.println(emp.toString());
+//		service.insertEmployee(emp);
 //		return emp.toString();
 //	}
 	
@@ -92,5 +94,27 @@ public class EmployeeController {
 		System.out.println("POST /update");
 		System.out.println("Id is: "+id);
 		return service.updateEmployee(emp,id).toString();
+	}
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping("/delete")
+	public String delete(Model model) {
+		String id = "";
+		model.addAttribute("id",id);
+		System.out.println("GET /delete");
+		return "delete.jsp";
+	}
+	
+	@PostMapping("/delete")
+	@ResponseBody
+	public void deleteEmployee(@ModelAttribute("emp") Employee emp,@ModelAttribute("id") int id) {
+		System.out.println("POST /delete");
+		System.out.println("Id is: "+id);
+		service.deleteEmployee(emp,id);
 	}
 }

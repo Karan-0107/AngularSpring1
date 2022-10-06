@@ -57,7 +57,9 @@ public class EmployeeService {
 		return repo.save(e);
 	}
 	
-	public void deleteEmployee() {
-		
+	
+	public void deleteEmployee(Employee emp,int id) {
+		Employee e = repo.findById(id).get();
+		repo.delete(e);
 	}
 }
